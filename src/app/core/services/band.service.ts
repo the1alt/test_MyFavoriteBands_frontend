@@ -18,7 +18,15 @@ export class BandService {
     return this.http.get<Band>(`${this.API_URL}/${band_id}`);
   }
 
+  create(data:any){
+    return this.http.post<Band>(`${this.API_URL}`, data);
+  }
+
   update(band_id:number, data:any){
     return this.http.put<Band>(`${this.API_URL}/${band_id}`, data);
+  }
+
+  delete(band_id:number){
+    return this.http.delete(`${this.API_URL}/${band_id}`);
   }
 }

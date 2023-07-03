@@ -1,56 +1,74 @@
 <ng-container *ngIf="bandForm">
   <form nz-form [formGroup]="bandForm">
+    
+    <!-- Nom -->
     <nz-form-item>
-      <nz-form-label nzFor="name" [nzSm]="8" [nzXs]="24" nzRequired>Nom</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="name" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24" nzRequired>Nom</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="name" name="name" type="string" id="name" placeholder="Nom du groupe">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Origine -->
     <nz-form-item>
-      <nz-form-label nzFor="origin" [nzSm]="8" [nzXs]="24">Origine</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="origin" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Origine</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="origin" name="origin" type="string" id="origin" placeholder="Origine du groupe">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Ville -->
     <nz-form-item>
-      <nz-form-label nzFor="city" [nzSm]="8" [nzXs]="24">Ville</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="city" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Ville</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="city" name="city" type="string" id="city" placeholder="Ville">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Année début -->
     <nz-form-item>
-      <nz-form-label nzFor="start" [nzSm]="8" [nzXs]="24">Année début</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="start" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Année début</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="start" name="start" type="number" id="start" >
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Année séparation -->
     <nz-form-item>
-      <nz-form-label nzFor="split" [nzSm]="8" [nzXs]="24">Année séparation</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="split" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Année séparation</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="split" name="split" type="number" id="split">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Fondateurs -->
     <nz-form-item>
-      <nz-form-label nzFor="founders" [nzSm]="8" [nzXs]="24">Fondateurs</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="founders" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Fondateurs</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="founders" name="founders" type="string" id="founders" placeholder="Fondateurs">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Membres -->
     <nz-form-item>
-      <nz-form-label nzFor="members_count" [nzSm]="8" [nzXs]="24">Membres</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="members_count" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Membres</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="members_count" name="members_count" type="number" id="members_count" placeholder="Nombre de membres">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Courant musical -->
     <nz-form-item>
-      <nz-form-label nzFor="style" [nzSm]="8" [nzXs]="24">Courant musical</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="style" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Courant musical</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <input nz-input nzSpan="50" formControlName="style" name="style" type="string" id="style" placeholder="Courant musical">
       </nz-form-control>
     </nz-form-item>
+    
+    <!-- Présentation -->
     <nz-form-item>
-      <nz-form-label nzFor="description" [nzSm]="8" [nzXs]="24">Présentation</nz-form-label>
-      <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-form-label nzFor="description" [nzLg]="2" [nzMd]="4" [nzSm]="8" [nzXs]="24">Présentation</nz-form-label>
+      <nz-form-control [nzLg]="22" [nzMd]="20" [nzSm]="16" [nzXs]="24">
         <nz-textarea-count [nzMaxCharacterCount]="2000">
           <textarea formControlName="description" nz-input rows="2" placeholder="Présentation...."></textarea>
         </nz-textarea-count>
@@ -58,7 +76,7 @@
     </nz-form-item>
     
     <div class="d-flex justify-content-end">
-      <button class="btn btn-warning ms-3" type="button">Annuler</button>
+      <button class="btn btn-warning ms-3" type="button" (click)="goToList()">Annuler</button>
       <button class="btn btn-success ms-3" [disabled]="bandForm.invalid" (click)="save()">Enregistrer</button>
     </div>
   </form>

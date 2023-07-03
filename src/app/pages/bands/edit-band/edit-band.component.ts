@@ -6,11 +6,11 @@ import { Band } from 'src/app/core/models/band.model';
 import { BandService } from 'src/app/core/services/band.service';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  selector: 'app-edit-band',
+  templateUrl: './edit-band.component.html',
+  styleUrls: ['./edit-band.component.scss']
 })
-export class EditComponent implements OnInit{
+export class EditBandComponent implements OnInit{
 
   band_id!: number;
   band?: Band;
@@ -39,8 +39,8 @@ export class EditComponent implements OnInit{
     const bandSave$ = this.bandService.update(this.band_id, event);
     await firstValueFrom(bandSave$).then(result=>{
       this.band = result;
-      this.notification.success('Opération terminée', 'Le groupe a bien été mis à jour')
-      this.router.navigateByUrl('')
+      this.notification.success('Opération terminée', 'Le groupe a bien été mis à jour') // notification
+      this.router.navigateByUrl('') // return to list
     })
   }
 }

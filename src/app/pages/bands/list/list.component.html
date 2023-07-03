@@ -1,50 +1,67 @@
-<div class="container-fluid px-4 py-4">
-  <div class="row">
-    <div class="col-12">
-      <h1>Liste des groupes</h1>
-    </div>
-    <div class="col-12 d-flex justify-content-end">
-      <button class="btn btn-primary ms-3" (click)="importBands()">Importer un ficher excel</button>
-      <button class="btn btn-primary ms-3" (click)="createBand()">Ajouter un groupe</button>
-    </div>
-    <div class="col-12">
-      <div class="table-responsive">
-        <table class="table table-sm table-striped">
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>Origine</th>
-              <th>Ville</th>
-              <th>Année début</th>
-              <th>Année séparation</th>
-              <th>Fondateurs</th>
-              <th>Membres	</th>
-              <th>Courant musical</th>
-              <th>Présentation</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let band of bands">
-              <td>{{band.name}}</td>
-              <td>{{band.origin}}</td>
-              <td>{{band.city}}</td>
-              <td>{{band.start}}</td>
-              <td>{{band.split}}</td>
-              <td>{{band.founders}}</td>
-              <td>{{band.members_count}}</td>
-              <td>{{band.style}}</td>
-              <td>{{band.description}}</td>
-              <td>
-                <div class="w-100 d-flex justify-content-between">
-                  <button class="btn btn-link text-primary" (click)="editBand(band.id)"> <span nz-icon nzType="edit" nzTheme="outline"></span></button>
-                  <button class="btn btn-link text-danger" (click)="deleteBand(band.id)"> <span nz-icon nzType="delete" nzTheme="outline"></span></button>
-                </div>
-              </td>  
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div class="row">
+  <div class="col-12 d-flex justify-content-end">
+    <!-- File import -->
+    <nz-upload
+      [nzAction]="uploadAdress"
+      [nzFileList]="fileList"
+      [nzAccept]="'.xls, .xlsx'"
+      [nzHeaders]="{ authorization: 'authorization-text' }"
+      (nzChange)="importBands($event)"
+    >
+      <button class="btn btn-primary ms-3" [disabled]="fileUploading">Importer un ficher excel</button>
+    </nz-upload>
+  
+    <!-- Add Band -->
+    <button class="btn btn-primary ms-3" (click)="createBand()">Ajouter un groupe</button>
+  </div>
+  <div class="col-12">
+    <div class="table-responsive">
+      <table class="table table-sm table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Origine</th>
+            <th>Ville</th>
+            <th>Année début</th>
+            <th>Année séparation</th>
+            <th>Fondateurs</th>
+            <th>Membres	</th>
+            <th>Courant musical</th>
+            <th>Présentation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let band of bands">
+            <td>{{band.name}}</td>
+            <td>{{band.origin}}</td>
+            <td>{{band.city}}</td>
+            <td>{{band.start}}</td>
+            <td>{{band.split}}</td>
+            <td>{{band.founders}}</td>
+            <td>{{band.members_count}}</td>
+            <td>{{band.style}}</td>
+            <td>{{band.description}}</td>
+            <td>
+              <div class="w-100 d-flex justify-content-between">
+                
+                <!-- Edit Band -->
+                <button class="btn btn-link text-primary" (click)="editBand(band.id)"> <span nz-icon nzType="edit" nzTheme="outline"></span></button>
+  
+                <!-- Delete Band with User Confirmation -->
+                <button class="btn btn-link text-danger" 
+                  nz-popconfirm
+                  nzPopconfirmTitle="Êtes-vous sûr de vouloir supprimer ce groupe ?"
+                  nzPopconfirmPlacement="bottom"
+                  (nzOnConfirm)="deleteBand(band)"
+                  [nzOkText]="'Oui'"
+                  [nzCancelText]="'Annuler'"
+                > <span nz-icon nzType="delete" nzTheme="outline"></span></button>
+              </div>
+            </td>  
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

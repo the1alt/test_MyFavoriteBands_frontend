@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Band } from 'src/app/core/models/band.model';
 
 @Component({
@@ -16,6 +17,7 @@ export class BandFormComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
@@ -44,7 +46,10 @@ export class BandFormComponent implements OnInit{
 
   save(){
     let _band = this.bandForm?.getRawValue();
-    console.log(_band)
     this.onSave.emit(_band);
+  }
+
+  goToList(){
+    this.router.navigateByUrl('') // return to list
   }
 }
