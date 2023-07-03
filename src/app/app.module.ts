@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { BandService } from './core/services/band.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(fr);
 
@@ -24,7 +25,8 @@ registerLocaleData(fr);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    NgbModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: fr_FR },
