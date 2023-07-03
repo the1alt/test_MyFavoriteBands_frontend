@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { Band } from 'src/app/core/models/band.model';
 import { BandService } from 'src/app/core/services/band.service';
@@ -14,6 +15,7 @@ export class ListComponent implements OnInit{
 
   constructor(
     private bandService: BandService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class ListComponent implements OnInit{
   
   editBand(band_id: number){
     console.log('editBand '+band_id);
+    this.router.navigateByUrl(`edit/${band_id}`)
   }
   
   deleteBand(band_id: number){
