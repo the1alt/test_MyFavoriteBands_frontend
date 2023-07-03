@@ -10,6 +10,7 @@ import { fr_FR, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
+import { BandService } from './core/services/band.service';
 
 registerLocaleData(fr);
 
@@ -26,7 +27,8 @@ registerLocaleData(fr);
     CoreModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: fr_FR }
+    { provide: NZ_I18N, useValue: fr_FR },
+    BandService
   ],
   bootstrap: [AppComponent]
 })
