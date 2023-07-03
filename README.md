@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## API configuration
 
-This project need the [MyFavoriteBands Backend API](https://github.com/the1alt/test_WinLassie_backend.git) to run.
+This project need the [MyFavoriteBands Backend API](https://github.com/the1alt/test_MyFavoriteBands_backend.git) to run.
 
 The backend run by default on port 8000. If you changed it, don't forget to update environment file ('src/environments/environment.ts) with your own configuration.
 
